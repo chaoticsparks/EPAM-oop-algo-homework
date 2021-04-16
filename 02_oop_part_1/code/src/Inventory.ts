@@ -3,7 +3,7 @@ import { ItemComparator } from './ItemComparator';
 
 
 export class Inventory {
-  private items: Item[];
+  private items: Item[] = [];
 
   addItem(item: Item) {
     this.items.push(item);
