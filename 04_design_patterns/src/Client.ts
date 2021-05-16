@@ -1,5 +1,5 @@
 import { Gui } from './Gui';
-import { Shipment } from './Shipment';
+import { ShipmentInterface } from './Shipment';
 
 
 export class Client {
@@ -11,7 +11,7 @@ export class Client {
     this.gui.on('send', this.onShip);
   }
 
-  onShip(shipment: Shipment) {
+  onShip(shipment: ShipmentInterface) {
     console.log(shipment.ship());
   }
 }
