@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+    <style>
+        .value {
+            display: inline-block;
+            margin-right: 10px;
+            width: 200px;
+        }
+
+        .rate {
+            margin: 0 50px;
+        }
+    </style>
+</head>
+<body>
+<fieldset data-viewRoot="controls">
+    <p>Control</p>
+    <div>
+        <input data-input="control-sliders" type="radio" id="sliders" name="control" value="sliders">
+        <label for="sliders">Sliders</label>
+    </div>
+    <div>
+        <input data-input="control-fields" type="radio" id="fields" name="control" value="fields" checked>
+        <label for="fields">Fields</label>
+    </div>
+
+    <p>Mode</p>
+    <div>
+        <input data-input="mode-all" type="radio" id="all" name="mode" value="all">
+        <label for="all">All fields</label>
+    </div>
+    <div>
+        <input data-input="mode-individual" type="radio" id="individual" name="mode" value="individual" checked>
+        <label for="individual">Individual fields</label>
+    </div>
+</fieldset>
+
+<div data-viewRoot="converter-panels">
+    <div data-element="inputs-panel">
+        <fieldset data-viewRoot="usdInputsConverter">
+            <legend>USD</legend>
+            <label for="usd-euro">EUR:</label>
+            <input data-input="euro" type="text" id="usd-euro" name="usd-euro">
+            <label for="usd-rate">Exchange rate:</label>
+            <input data-input="rate" type="text" id="usd-rate" name="usd-rate">
+            <label for="usd-converted">USD:</label>
+            <input data-input="converted" type="text" id="usd-converted" name="usd-converted">
+        </fieldset>
+        <fieldset data-viewRoot="uahInputsConverter">
+            <legend>UAH</legend>
+            <label for="uah-euro">EUR:</label>
+            <input data-input="euro" type="text" id="uah-euro" name="uah-euro">
+            <label for="uah-rate">Exchange rate:</label>
+            <input data-input="rate" type="text" id="uah-rate" name="uah-rate">
+            <label for="uah-converted">UAH:</label>
+            <input data-input="converted" type="text" id="uah-converted" name="uah-converted">
+        </fieldset>
+        <fieldset data-viewRoot="gbrInputsConverter">
+            <legend>GBR</legend>
+            <label for="gbr-euro">EUR:</label>
+            <input data-input="euro" type="text" id="gbr-euro" name="gbr-euro">
+            <label for="gbr-rate">Exchange rate:</label>
+            <input data-input="rate" type="text" id="gbr-rate" name="gbr-rate">
+            <label for="gbr-converted">GBR:</label>
+            <input data-input="converted" type="text" id="gbr-converted" name="gbr-converted">
+        </fieldset>
+    </div>
+    <div data-element="sliders-panel" style="display: none">
+        <fieldset data-viewRoot="usdSlidersConverter">
+            <legend>USD</legend>
+            <label for="usd-euro-slide">EUR: <b class="value" data-element="euro">0</b></label>
+            <input data-input="euro" type="range" id="usd-euro-slide" name="usd-euro" min="0" max="10000">
+            <span class="rate">Exchange rate: <span data-element="rate">0</span></span>
+            <label for="usd-converted-slider">USD: <b class="value" data-element="converted">0</b></label>
+            <input data-input="converted" type="range" id="usd-converted-slider" name="usd-converted" min="0" max="10000" step="any">
+        </fieldset>
+        <fieldset data-viewRoot="uahSlidersConverter">
+            <legend>UAH</legend>
+            <label for="uah-euro-slide">UAH: <b class="value" data-element="euro">0</b></label>
+            <input data-input="euro" type="range" id="uah-euro-slide" name="uah-euro" min="0" max="10000">
+            <span class="rate">Exchange rate: <span data-element="rate">0</span></span>
+            <label for="uah-converted-slider">UAH: <b class="value" data-element="converted">0</b></label>
+            <input data-input="converted" type="range" id="uah-converted-slider" name="uah-converted" min="0" max="10000" step="any">
+        </fieldset>
+        <fieldset data-viewRoot="gbrSlidersConverter">
+            <legend>GBR</legend>
+            <label for="gbr-euro-slider">EUR: <b class="value" data-element="euro">0</b></label>
+            <input data-input="euro" type="range" id="gbr-euro-slider" name="gbr-euro" min="0" max="10000">
+            <span class="rate">Exchange rate: <span data-element="rate">0</span></span>
+            <label for="gbr-converted-slider">GBR: <b class="value" data-element="converted">0</b></label>
+            <input data-input="converted" type="range" id="gbr-converted-slider" name="gbr-converted" min="0" max="10000" step="any">
+        </fieldset>
+    </div>
+</div>
+<script src="bundle.js"></script>
+</body>
+</html>
